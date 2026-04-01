@@ -22,6 +22,18 @@ Core stack components:
 - promtail → Loki → Grafana logging pipeline
 - Telegram alert integration
 
+## Threat Model Considerations
+
+This architecture is designed to mitigate common production VPS risks:
+
+- SSH brute-force attacks
+- exposed administrative dashboards
+- database lateral movement risks
+- reverse proxy misconfiguration exposure
+- privilege escalation visibility gaps
+- silent service tampering
+
+Administrative interfaces are isolated behind a WireGuard private access plane to reduce public attack surface.
 ---
 
 ## Access Control Model

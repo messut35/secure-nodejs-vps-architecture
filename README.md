@@ -1,3 +1,4 @@
+![Architecture Diagram](secure-nodejs-vps-architecture-diagram.png)
 # Secure Node.js VPS Architecture (Production Blueprint)
 
 This repository documents a hardened VPS security architecture designed for production Node.js and Web3 backend services.

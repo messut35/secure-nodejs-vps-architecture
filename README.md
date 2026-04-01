@@ -97,6 +97,24 @@ Nginx reverse proxy enforces:
 - TLS via DNS challenge certificates
 - upstream exposure minimization
 
+## Administrative Plane Isolation Strategy
+
+Administrative access is intentionally separated from public traffic using a dedicated WireGuard network:
+
+Public traffic flow:
+
+Internet → Cloudflare → Nginx → Node.js services
+
+Administrative traffic flow:
+
+Operator device → WireGuard tunnel (10.77.0.0/24) → private dashboards
+
+This ensures:
+
+- no exposed SSH on public interface
+- no exposed admin dashboards
+- reduced attack surface for privilege escalation attempts
+- safer production operations for solo-operator infrastructure environments
 ---
 
 ## Security Posture Summary
